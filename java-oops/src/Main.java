@@ -1,5 +1,3 @@
-import java.io.FileNotFoundException;
-
 public class Main {
     public static void main(String[] args) {
 //        Test a = new Test();
@@ -11,8 +9,8 @@ public class Main {
         obj.test();
     }
 
-    public void test() throws RuntimeException {
-        throw new Exception("shreya here");
+    public void test() {
+        throw new RuntimeException("shreya here");
     }
 }
 
