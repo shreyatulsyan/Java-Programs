@@ -1,3 +1,4 @@
+package StringQuestions;
 import java.util.Set;
 import java.util.HashSet;
 import java.util.HashMap;
@@ -5,14 +6,15 @@ import java.util.Map;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
-class FindDuplicateElementsinAnArray
+public class FindDuplicateElementsinAnArray
 {
 	public static void main(String args[])
 	{
 		String[] arr = {"Amazon", "GCP", "Azure", "Amazon","Ali Baba", "SauceLabs","Azure","GCP"};
 		//approach1(arr);
 		//approach2(arr);
-		approach4(arr);
+		//approach4(arr);
+		practice(arr);
 	}
 
 	public static void approach1(String[] arr)
@@ -60,5 +62,14 @@ class FindDuplicateElementsinAnArray
 		Set<String> set = new HashSet<>();
 		Set<String> setdup = Arrays.asList(arr).stream().filter(e -> !set.add(e)).collect(Collectors.toSet());
 		System.out.println(setdup);
+	}
+
+	public static void practice(String[] arr){
+		HashSet set = new HashSet<>();
+		for(String a : arr) {
+			if (!set.add(a)){
+				System.out.println(a);
+			}
+		}
 	}
 }

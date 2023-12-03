@@ -1,5 +1,5 @@
 import java.util.Arrays;
-class MergeSort
+class MergeSort1
 {
 	public static void main(String args[])
 	{

@@ -8,7 +8,7 @@ class ArmstrongNumber
 	{
 		double sum=0;
 		int n=temp;
-		int[] arr = new int{-1,-1}[2];
+		int[] arr = new int[]{-1,-1};
 		while(n>0)
 		{
 			int digit = n%10;

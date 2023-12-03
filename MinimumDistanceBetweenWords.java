@@ -32,7 +32,5 @@ class MinimumDistanceBetweenWords
 			if(word1found==true && word2found==true)
 			break;
 		}
-
-		System.out.println()
 	}
 }

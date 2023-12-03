@@ -1,5 +1,5 @@
 import java.util.Arrays;
-class BubbleSort
+class BubbleSort2
 {
 	public static void main(String args[])
 	{

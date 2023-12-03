@@ -28,4 +28,5 @@ class MoveAllZeroesToEnd
 		}
 		System.out.println(Arrays.toString(arr));
 	}
+
 }
