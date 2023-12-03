@@ -1,4 +1,6 @@
-class DeleteCommand
+package LinkedList;
+
+class DeleteFromStart
 {
 	public static void main(String args[])
 	{

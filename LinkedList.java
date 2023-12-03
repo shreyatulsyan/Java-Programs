@@ -21,22 +21,22 @@ class LinkedList
 
 	public void insertAtFront()
 	{
-		Node n = new Node(4);
+		ABC n = new ABC(4);
 		n.next = head;
 		head = n;
 	}
 
 	public void insertAtEnd()
 	{
-		Node n = new Node(7);
+		ABC n = new ABC(7);
 
 	}
 	public void add()
 	{
 		LinkedList ll= new LinkedList();
-		ll.head = new Node(1);
-		Node second = new Node(2);
-		Node third = new Node(3);
+		ll.head = new ABC(1);
+		ABC second = new ABC(2);
+		ABC third = new ABC(3);
 
 		ll.head.next = second;
 		second.next = third;
@@ -48,7 +48,7 @@ class LinkedList
 
 	public void printList()
 	{
-		Node temp = head;
+		ABC temp = head;
 		System.out.println("Printing..");
 		while(temp!=null)
 		{

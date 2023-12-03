@@ -1,4 +1,6 @@
-class LinkedListTest
+package LinkedList;
+
+public class LinkedListTest
 {
 	public Node head;
 

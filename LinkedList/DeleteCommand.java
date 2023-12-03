@@ -1,3 +1,5 @@
+package LinkedList;
+
 class DeleteCommand
 {
 	public static void main(String args[])

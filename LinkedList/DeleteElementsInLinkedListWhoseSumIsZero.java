@@ -1,3 +1,5 @@
+package LinkedList;
+
 class DeleteElementsInLinkedListWhoseSumIsZero
 {
 	public static void main(String args[])
@@ -10,7 +12,7 @@ class DeleteElementsInLinkedListWhoseSumIsZero
 		//Delete the elements in an linked list whose sum is equal to zero
 		linkedListTest.printMyList();
 		System.out.println("Delete the elements in an linked list whose sum is equal to zero");
-		deleteElementsInLinkedListWhoseSumIsZero(linkedListTest);
+		// deleteElementsInLinkedListWhoseSumIsZero(linkedListTest);
 		linkedListTest.printMyList();;
 		
 	}
