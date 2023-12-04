@@ -1,9 +1,5 @@
 package StringQuestions;
-import java.util.Set;
-import java.util.HashSet;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Arrays;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class FindDuplicateElementsinAnArray
@@ -65,11 +61,16 @@ public class FindDuplicateElementsinAnArray
 	}
 
 	public static void practice(String[] arr){
-		HashSet set = new HashSet<>();
-		for(String a : arr) {
-			if (!set.add(a)){
-				System.out.println(a);
-			}
+		HashMap<String,Integer> map = new HashMap<>();
+
+		for(String s : arr){
+			map.put(s,(map.getOrDefault(s,0))+1);
 		}
+
+		for(Map.Entry<String,Integer> e : map.entrySet()){
+			System.out.println(e.getKey());
+			System.out.println(e.getValue());
+		}
+
 	}
 }
