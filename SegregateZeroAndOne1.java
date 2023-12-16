@@ -1,5 +1,5 @@
 import java.util.Arrays;
-class SegregateZeroAndOne
+class SegregateZeroAndOne1
 {
 	public static void main(String args[])
 	{
