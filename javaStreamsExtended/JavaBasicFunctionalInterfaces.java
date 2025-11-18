@@ -1,6 +1,7 @@
 package javaStreamsExtended;
 
 import java.util.function.Consumer;
+import java.util.function.Predicate;
 import java.util.function.Supplier;
 
 public class JavaBasicFunctionalInterfaces {
@@ -36,34 +37,66 @@ public class JavaBasicFunctionalInterfaces {
         employeeConsumer1.accept(new Employee(1, "Prateek"));
 
         // TODO: Implement predicate using "implements" keyword, lambda and method reference.
+
+        // Predicate
+        System.out.println("=-=-=-=-=-=-=-=-=-=-Predicate=-=-=-=-=-=-=-=-=-=-");
+        Predicate<String> predicate = new PredicateImpl();
+        predicate.test("orange");
+
+        //Predicate using lambda
+        Predicate<String> predicateLamda1 = s -> {
+            if (s.equals("blue")) {
+                return true;
+            } else {
+                return false;
+            }
+        };
+        Predicate<String> predicateLamda2 = s -> {
+            if (s.equals("blue")) return true;
+            else return false;
+        };
+        Predicate<String> predicateLamda3 = s -> (s.equals("blue")) ? true : false;
+        System.out.println("Predicate result: " + predicateLamda3.test("orange"));
+
+        Predicate<Employee> predicateEmployee = s -> (s.getName().equals("shreya")) ? true : false;
+        System.out.println("Predicate employee result: " + predicateEmployee.test(new Employee(2,"shreya")));
+
     }
 }
 
-/**
- * Supplier: job is to supply some data.
- */
-class SupplierImpl implements Supplier<String> {
-    @Override
-    public String get() {
-        return "String bhej di gai hai";
-    }
-}
+        /**
+         * Supplier: job is to supply some data.
+         */
+        class SupplierImpl implements Supplier<String> {
+            @Override
+            public String get() {
+                return "String bhej di gai hai";
+            }
+        }
 
 
-/**
- * Consumer: consume some data.
- */
-class ConsumerImpl implements Consumer<String> {
-    @Override
-    public void accept(String s) {
-        System.out.println("String mil gayi hai: " + s);
-    }
-}
+        /**
+         * Consumer: consume some data.
+         */
+        class ConsumerImpl implements Consumer<String> {
+            @Override
+            public void accept(String s) {
+                System.out.println("String mil gayi hai: " + s);
+            }
+        }
 
 
-/**
- * Predicate: To test a condition.
- */
+        /**
+         * Predicate: To test a condition.
+         */
+        class PredicateImpl implements Predicate<String> {
+            @Override
+            public boolean test(String color) {
+                if (color.equals("blue"))
+                    return true;
+                return false;
+            }
+        }
 
 
 /**
