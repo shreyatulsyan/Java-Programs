@@ -11,10 +11,32 @@ class PrintAllElementsInAList {
         List<Integer> listOfInt = Arrays.asList(1,2,3);
         listOfInt.stream().forEach(n -> System.out.println(n));
 
-        //nhi aya
+        //nhi aya: aa gya
         Consumer<Integer> c = n->System.out.println(n);
         listOfInt.forEach(c);
 
+        // real world example
+        var emp1 = new Employee(5000, "Shreya");
+        var emp2 = new Employee(2000, "Prateek");
+        var emp3 = new Employee(3000, "Mini");
+
+//        var emplList = List.of(emp1, emp2, emp3);
+        var emplList = new ArrayList<Employee>();
+        emplList.add(emp1);
+        emplList.add(emp2);
+        emplList.add(emp3);
+
+        System.out.println("Before increment: " + emplList);
+
+        // plain java
+        for (var emp: emplList) {
+            emp.setSalary(emp.getSalary() + 500);
+        }
+        System.out.println("After increment using plain java: " + emplList);
+
+        // use forEach
+        emplList.forEach(emp -> emp.setSalary(emp.getSalary() + 500));
+        System.out.println("After increment using forEach java: " + emplList);
     }
 }
 
@@ -30,14 +52,19 @@ class CheckIfStringStartsWithA {
         System.out.println(f.test("Ana"));
     }
 }
-//nhi aya
-class FindfirststringstartingwithA{
-    public static void main(String args[]) {
-        List<String> list = Arrays.asList("Ravi", "Amit", "Raj");
+
+//nhi aya: ho gaya
+class FindFirstStringStartingWithA{
+    public static void main(String[] args) {
+        List<String> list = Arrays.asList("Ravi", "Amit", "Raj", "Aman");
         Optional<String> res = list.stream().filter(n->n.startsWith("A")).findFirst();
-        System.out.println(res);
+        res.ifPresentOrElse(System.out::println, () -> System.out.println("No names starting with A"));
+
+        Optional<String> res2 = list.stream().filter(n->n.startsWith("Z")).findFirst();
+        res2.ifPresentOrElse(System.out::println, () -> System.out.println("No names starting with Z"));
     }
 }
+
 class CountStringsWithLengthGreaterThan5 {
     public static void main(String args[]){
         List<String> list = Arrays.asList("apple", "banana", "orange");
@@ -74,6 +101,7 @@ class SortStringsInDescendingOrder {
         System.out.println(nums);
     }
 }
+
 //nhi aya reduce takes binary operator??
 class SumOfNumbersUsingReduce {
     public static void main(String args[]){
@@ -82,6 +110,7 @@ class SumOfNumbersUsingReduce {
         System.out.println(sum);
     }
 }
+
 class Printlengthsofeachstringinalist{
     public static void main(String args[]){
         List<String> countries = Arrays.asList("India","USA", "Vietnam");
@@ -89,6 +118,7 @@ class Printlengthsofeachstringinalist{
         countries.stream().map(f).forEach(System.out::println);
     }
 }
+
 class Printlengthsofeachstringinalist2{
     public static void main(String args[]){
         List<String> countries = Arrays.asList("India","USA", "Vietnam");
@@ -213,3 +243,17 @@ class GFG2 {
     }
 }
 
+
+class MultiplyBy2 {
+    public static void main(String[] args) {
+        var list = List.of(1, 2, 3, 4, 5);
+        list.forEach(e -> System.out.println(e * 2));
+
+        list.stream().forEach(e -> System.out.println(e * 2));
+
+        list = list.stream()
+            .map(e -> e * 2)
+            .toList();
+        System.out.println(list);
+    }
+}
