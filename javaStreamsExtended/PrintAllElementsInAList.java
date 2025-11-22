@@ -4,6 +4,7 @@ import java.util.*;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.stream.IntStream;
 
 class PrintAllElementsInAList {
     public static void main(String args[]){
@@ -182,6 +183,33 @@ class CheckIfAnyNumberIsDivisibleBy5{
         List<Integer> list = Arrays.asList(1,2,3,4,5);
         boolean res = list.stream().anyMatch(n->n%5==0);
         System.out.println(res);
+    }
+}
+
+//nhi aya
+class GFG {
+    public static void main(String[] args) {
+        // Creating list of integers
+        List<Integer> numbers = Arrays.asList(-2, 0, 4, 6, 8);
+
+        // Using reduce to find the sum of all elements
+        int sum = numbers.stream()
+                .reduce(0, (element1, element2) -> element1 + element2);
+
+        // Displaying the sum of all elements
+        System.out.println("The sum of all elements is " + sum);
+    }
+}
+//nhi aya
+class GFG2 {
+    public static void main(String[] args) {
+        // Calculating the product of all numbers in the range [2, 8)
+        int product = IntStream.range(2, 8)
+                .reduce((num1, num2) -> num1 * num2)
+                .orElse(-1); // Provides -1 if the stream is empty
+
+        // Displaying the product
+        System.out.println("The product is : " + product);
     }
 }
 
