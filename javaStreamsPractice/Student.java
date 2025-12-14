@@ -1,5 +1,7 @@
 package javaStreamsPractice;
 
+import java.util.Objects;
+
 public class Student {
     private byte rollNumber;
     private final String firstName;
@@ -44,14 +46,31 @@ public class Student {
     }
 
     @Override
-    public boolean equals(Object o){
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+
+        Student student = (Student) o;
+
+        return rollNumber == student.rollNumber
+            && currentYear == student.currentYear
+            && firstName != null && firstName.equals(student.firstName) // or Objects.equals(firstName, student.firstName)
+            && lastName != null && lastName.equals(student.lastName); // or Objects.equals(lastName, student.lastName)
     }
+
     @Override
     public int hashCode() {
-
+        return Objects.hash(rollNumber, firstName, lastName, currentYear);
     }
+
     @Override
     public String toString() {
-
+        return "Student{" +
+                "rollNumber=" + rollNumber +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", currentYear=" + currentYear +
+                '}';
     }
 }
