@@ -1,8 +1,9 @@
 package javaStreamPractice.Task2;
 
+import java.util.Comparator;
 import java.util.Objects;
 
-public class Student {
+public class Student implements Comparable {
     private byte rollNumber;
     private final String name;
     private final long parentsNumber;
