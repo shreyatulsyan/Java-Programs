@@ -1,4 +1,4 @@
-package javaStreamPractice;
+package javaStreamPractice.Task1;
 
 import java.util.List;
 

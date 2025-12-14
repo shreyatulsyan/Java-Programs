@@ -1,4 +1,4 @@
-package javaStreamPractice;
+package javaStreamPractice.Task1;
 
 public class User {
     private final UserName userName;
