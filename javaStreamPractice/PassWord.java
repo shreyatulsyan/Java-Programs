@@ -1,4 +1,4 @@
-package javaStreamsPractice;
+package javaStreamPractice;
 
 public class PassWord {
     private String passWord;
@@ -13,8 +13,6 @@ public class PassWord {
 
     @Override
     public String toString() {
-        return "PassWord{" +
-                "passWord='" + passWord + '\'' +
-                '}';
+        return passWord;
     }
 }

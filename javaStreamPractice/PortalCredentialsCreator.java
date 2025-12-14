@@ -1,5 +1,6 @@
-package javaStreamsPractice;
+package javaStreamPractice;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.random.RandomGenerator;
 
@@ -21,7 +22,13 @@ public class PortalCredentialsCreator {
 
     // TODO:
     public List<User> createListOfUsers(List<UserName> userNames, List<PassWord> passwords) {
-        return null;
+        List<User> u = new ArrayList<>();
+        for(int i=0;i<userNames.size();i++){
+            UserName username = userNames.get(i);
+            PassWord password = passwords.get(i);
+            u.add(new User(username, password));
+        }
+        return u;
     }
 
     private UserName createUsername(Student student) {

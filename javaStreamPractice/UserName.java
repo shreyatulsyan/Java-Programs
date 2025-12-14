@@ -1,4 +1,4 @@
-package javaStreamsPractice;
+package javaStreamPractice;
 
 public class UserName {
     private String userName;
@@ -13,8 +13,6 @@ public class UserName {
 
     @Override
     public String toString() {
-        return "UserName{" +
-                "userName='" + userName + '\'' +
-                '}';
+        return userName;
     }
 }

@@ -1,4 +1,4 @@
-package javaStreamsPractice;
+package javaStreamPractice;
 
 import java.util.Objects;
 

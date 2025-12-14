@@ -1,4 +1,4 @@
-package javaStreamsPractice;
+package javaStreamPractice;
 
 public class User {
     private final UserName userName;
@@ -15,5 +15,13 @@ public class User {
 
     public PassWord getPassword () {
         return password;
+    }
+
+    @Override
+    public String toString() {
+        return "User { " +
+                "userName=" + userName +
+                ", password=" + password +
+                " } ";
     }
 }
