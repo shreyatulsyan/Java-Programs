@@ -3,7 +3,7 @@ package javaStreamPractice.Task2;
 import java.util.Comparator;
 import java.util.Objects;
 
-public class Student implements Comparable {
+public class Student implements Comparable<Student> {
     private byte rollNumber;
     private final String name;
     private final long parentsNumber;
@@ -65,5 +65,10 @@ public class Student implements Comparable {
                 ", parentsNumber=" + parentsNumber +
                 ", marks=" + marks +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Student o) {
+        return Double.compare(this.marks,o.marks);
     }
 }
